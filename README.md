@@ -1,3 +1,3 @@
 
 ![Preview](/preview/Animated.png)
-![Preview](/preview/animated.mp4)
+[![Watch the video](/preview/animated.mp4)
