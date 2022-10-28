@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stylish/constants.dart';
 import 'package:stylish/models/Product.dart';
-
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'components/color_dot.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -82,12 +82,26 @@ class DetailsScreen extends StatelessWidget {
                       width: 200,
                       height: 48,
                       child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            primary: primaryColor,
-                            shape: const StadiumBorder()),
-                        child: const Text("PESAN SEKARANG"),
-                      ),
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              primary: primaryColor,
+                              shape: const StadiumBorder()),
+                          child: AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                'PESAN SEKARANG!',
+                                textStyle: const TextStyle(
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                speed: const Duration(milliseconds: 200),
+                              ),
+                            ],
+                            totalRepeatCount: 5,
+                            pause: const Duration(milliseconds: 500),
+                            displayFullTextOnTap: true,
+                            stopPauseOnTap: true,
+                          )),
                     ),
                   )
                 ],
